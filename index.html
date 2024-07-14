@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditorio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="btn-container">
+        <i class="fa fa-sun-o" aria-hidden="true"></i>
+        <label class="switch btn-color-mode-switch">
+            <input type="checkbox" name="color_mode" id="color_mode" value="1">
+            <label for="color_mode" data-on="Oscuro" data-off="Claro" class="btn-color-mode-switch-inner"></label>
+        </label>
+        <i class="fa fa-moon-o" aria-hidden="true"></i>
+    </div>
+    <header>
+        <img src="Imagenes/Img_AsambleaRegional.jpg" alt="Imagen Asamblea Regional" class="header-image">
+        <h1>Asamblea Regional de los Testigos de Jehová</h1>
+        <h2>Mapa General para Acomodadores ZONA 3</h2>
+    </header>
+    <main>
+        <section id="zones" aria-label="Zonas del Auditorio">
+            <button id="showZonesButton">Mostrar zonas</button>
+            <span id="selectedZoneText"></span>
+            <div id="zonesMenu" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Selecciona una zona</h2>
+                    <div class="zone-buttons-container">
+                        <button class="zone-button" data-zone="A">Zona 3 A</button>
+                        <button class="zone-button" data-zone="B">Zona 3 B</button>
+                        <button class="zone-button" data-zone="C">Zona 3 C</button>
+                        <button clsass="zone-button" data-zone="D">Zona 3 D</button>
+                        <button class="zone-button" data-zone="E">Zona 3 E</button>
+                        <button class="zone-button" data-zone="F">Zona 3 F</button>
+                        <button class="zone-button" data-zone="G">Zona 3 G <img src="Imagenes/PrimerosAuxilios2.jpg" alt="primerosAuxilios" class="primerosAuxilios"></button>
+                        <button class="zone-button" data-zone="H">Zona 3 H</button>
+                        <button class="zone-button" data-zone="I">Zona 3 I</button>
+                        <button class="zone-button" data-zone="J">Zona 3 J</button>
+                        <button class="zone-button" data-zone="K">Zona 3 K</button>
+                        <button class="zone-button" data-zone="L">Zona 3 L</button>
+                        <button class="zone-button" data-zone="M">Zona 3 M</button>
+                        <button class="zone-button" data-zone="N">Zona 3 N</button>
+                        <button class="zone-button" data-zone="O">Zona 3 O</button>
+                        <button class="zone-button" data-zone="P">Zona 3 P</button>
+                        <button class="zone-button" data-zone="Q">Zona 3 Q</button>
+                        <button class="zone-button" data-zone="R">Zona 3 R</button>
+                        <button class="zone-button" data-zone="S">Zona 3 S</button>
+                        <button class="zone-button" data-zone="T">Zona 3 T</button>
+                        <button class="zone-button" data-zone="U">Zona 3 U</button>
+                        <button class="zone-button" data-zone="V">Zona 3 V</button>
+                        <button class="zone-button" data-zone="W">Zona 3 W <img src="Imagenes/PrimerosAuxilios2.jpg" alt="primerosAuxilios" class="primerosAuxilios"></button>
+                        <button class="zone-button" data-zone="X">Zona 3 X</button>
+                        <button class="zone-button" data-zone="Y">Zona 3 Y</button>
+                        <button class="zone-button" data-zone="Z">Zona 3 Z</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="auditorium-container" id="auditoriumContainer"> 
+            <div class="screen-container">
+                <img src="Imagenes/BannerPantalla.jpg" class="screen-image" id="screenImage">
+                <p>PLATAFORMA</p>
+            </div>
+            <section id="auditorium" aria-label="Asientos del Auditorio"></section>
+        </div>
+        <section id="specifications">
+            <ul>
+                <li class="spec-item">
+                    <span class="circle free"></span>
+                    <span>Asiento libre</span>
+                </li>
+                <li class="spec-item">
+                    <span class="circle occupied"></span>
+                    <span>Asiento ocupado</span>
+                </li>
+                <li class="spec-item">
+                    <span class="circle ns"></span>
+                    <span>Asiento Ocupado Necesidades Especiales</span>
+                </li>
+            </ul>
+        </section>
+        
+        <div id="acomodadoresModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title">Número de Acomodadores en su zona:</span>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <input type="number" id="acomodadoresInput" placeholder="Ingrese número">
+                </div>
+                <div class="modal-footer">
+                    <button id="guardarAcomodadoresButton">Guardar</button>
+                </div>
+            </div>
+        </div>
+        <section id="summary" aria-label="Resumen">
+            <p id="zoneSummary"></p>
+            <p id="overallSummary"></p>
+        </section>
+        <section id="passwordSection" class="password-container">
+            <label for="passwordInput" class="passwordInput">Contraseña para funciones especiales:</label>
+            <input type="password" id="passwordInput" class="password-input" placeholder="Ingrese Contraseña">
+            <button type="button" id="togglePassword" aria-label="Mostrar u ocultar contraseña">
+                <i class="fas fa-eye"></i>
+            </button>
+            <button id="submitPasswordButton" class="submit-button">Enviar</button>
+            <p id="errorMessage">Contraseña incorrecta.</p>
+        </section>
+        <div id="buttonContainer">
+            <button id="resetButton" disabled>Resetear Asientos</button>
+            <button id="overallSummaryButton" disabled>Asistencia General</button>
+            <button id="removeSeatsButton" disabled>Eliminar Asientos</button>
+            <button id="restoreSeatsButton" disabled>Restaurar Asientos</button>
+            <button id="resetAcomodadoresButton">Reiniciar Acomodadores</button> <!-- Nuevo botón -->
+        </div>
+        
+    <script src="script.js"></script>
+</body>
+</html>
